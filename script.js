@@ -16,8 +16,8 @@ $motion.addEventListener("click", () => {
 
 $welcome.addEventListener("click", async () => {
       try {
-            // await document.body.requestFullscreen();
-            // await screen.orientation.lock("landscape-secondary");
+            await document.body.requestFullscreen();
+            await screen.orientation.lock("landscape-secondary");
 
             $welcome.style.display = "none";
 

@@ -156,6 +156,11 @@ function initializeBoard() {
 function initializeMotion() {
       window.addEventListener("devicemotion", event => {
             if (!isMotionControlActive) return;
-            console.log(event);
+            const x = event.accelerationIncludingGravity.x;
+
+            let value = (x + 10) / 20;
+                value = Math.min(Math.max(value, 0), 1);
+
+            console.log(value);
       });
 }

@@ -168,6 +168,8 @@ function initializeMotion() {
             let value = (x + 10) / 20;
                 value = Math.min(Math.max(value, 0), 1);
 
-            gainNode.gain.setValuaAtTime(value + 0.5, context.currentTime);
+            console.log(value + 0.5);
+
+            gainNode.gain.setValueAtTime(value + 0.5, context.currentTime);
       });
 }

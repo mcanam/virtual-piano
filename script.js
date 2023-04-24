@@ -17,7 +17,7 @@ $motion.addEventListener("click", () => {
             $motion.classList.remove("active");
       } 
 
-      else $motion.classList.remove("active") 
+      else $motion.classList.add("active") 
 });
 
 $welcome.addEventListener("click", async () => {
@@ -168,8 +168,8 @@ function initializeMotion() {
             let value = (x + 10) / 20;
                 value = Math.min(Math.max(value, 0), 1);
 
-            console.log(value + 0.5);
+            console.log(value);
 
-            gainNode.gain.setValueAtTime(value + 0.5, context.currentTime);
+            gainNode.gain.setValueAtTime(value, context.currentTime);
       });
 }

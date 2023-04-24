@@ -11,7 +11,13 @@ let isMotionControlActive = false;
 
 $motion.addEventListener("click", () => {
       isMotionControlActive = !isMotionControlActive;
-      $motion.classList[isMotionControlActive ? "add" : "remove"]("active");
+      
+      if (!isMotionControlActive) {
+            gainNode && (gainNode.gain.value = 1);
+            $motion.classList.remove("active");
+      } 
+
+      else $motion.classList.remove("active") 
 });
 
 $welcome.addEventListener("click", async () => {
@@ -130,7 +136,8 @@ function initializeBoard() {
       
             source.buffer = sample;
             source.connect(volume);
-            volume.connect(context.destination);
+            volume.connect(gainNode);
+            gainNode.connect(context.destination);
             source.start();
       
             return { source, volume };
@@ -158,9 +165,9 @@ function initializeMotion() {
             if (!isMotionControlActive) return;
             const x = event.accelerationIncludingGravity.x;
 
-            let value = (x + 10) / 5;
-                value = Math.min(Math.max(value, 0), 2);
+            let value = (x + 10) / 20;
+                value = Math.min(Math.max(value, 0), 1);
 
-            console.log(value);
+            gainNode.gain.setValuaAtTime(value + 0.5, context.currentTime);
       });
 }

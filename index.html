@@ -19,12 +19,42 @@
             <span>PLAY</span>
       </div>
 
-      <div class="app">
-
+      <div class="loading">
+            <span>0</span>
+            <span>/</span>
+            <span>0</span>
+            <span>data loaded</span>
       </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/eruda@3.0.0/eruda.min.js"></script>
-      <script>eruda.init()</script>
+      <div class="app">
+            <div class="topbar">
+                  <h1 class="title">Virtual Piano ✨</h1>
+                  <button class="motion-switch" data-active="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" fill="none" viewBox="0 0 19 20">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.667 10a8.333 8.333 0 0 1-8.334 8.333M17.667 10a8.333 8.333 0 0 0-8.334-8.333M17.667 10h-3.334m-5 8.333A8.333 8.333 0 0 1 1 10m8.333 8.333V15M1 10a8.333 8.333 0 0 1 8.333-8.333M1 10h3.333m5-8.333V5"/>
+                        </svg>
+                  </button>
+            </div>
+            <div class="content">
+                  <div class="board">
+                        <button class="key" data-note="C4"></button>
+                        <button class="key" data-note="D4"></button>
+                        <button class="key" data-note="E4"></button>
+                        <button class="key" data-note="F4"></button>
+                        <button class="key" data-note="G4"></button>
+                        <button class="key" data-note="A4"></button>
+                        <button class="key" data-note="B4"></button>
+                        <button class="key" data-note="C5"></button>
+
+                        <button class="half-key" data-note="Db4"></button>
+                        <button class="half-key" data-note="Eb4"></button>
+                        <button class="half-key" data-note="Gb4"></button>
+                        <button class="half-key" data-note="Ab4"></button>
+                        <button class="half-key" data-note="Bb4"></button>
+                  </div>
+            </div>
+      </div>
+
       <script src="script.js"></script>
 </body>
 

@@ -17,10 +17,22 @@ body {
       position: relative;
       width: 100vw;
       height: 100vh;
+      background-color: #01090d;
 }
 
-.welcome {
+button {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      border: none;
+      outline: none;
+      background: none;
+}
+
+.welcome,
+.loading {
       position: absolute;
+      z-index: 1000;
       width: 100%;
       height: 100%;
       display: flex;
@@ -28,4 +40,99 @@ body {
       justify-content: center;
       gap: 0.5em;
       background-color: #01090d;
+}
+
+.loading {
+      display: none;
+}
+
+.app {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+}
+
+.topbar {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.title {
+      font-size: 1.2rem;
+      font-weight: bold;
+}
+
+.content {
+      width: 100%;
+      flex: 1;
+}
+
+.board {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+}
+
+.key {
+      width: calc(100% / 8);
+      border-right: 1px solid #01090d;
+      background-color: #fff;
+}
+
+.key[data-note="C5"] {
+      border: none;
+}
+
+.half-key {
+      position: absolute;
+      z-index: 100;
+      width: calc(100% / 12);
+      height: 50%;
+      background-color: #01090d;
+      border-radius: 0 0 100px 100px;
+}
+
+.half-key[data-note="Db4"] {
+      transform: translateX(100%);
+}
+
+.half-key[data-note="Eb4"] {
+      transform: translateX(250%);
+}
+
+.half-key[data-note="Gb4"] {
+      transform: translateX(550%);
+}
+
+.half-key[data-note="Ab4"] {
+      transform: translateX(700%);
+}
+
+.half-key[data-note="Bb4"] {
+      transform: translateX(850%);
+}
+
+.key:disabled,
+.half-key:disabled {
+      background-color: grey;
+}
+
+.key.active {
+      background-color: #25cf91;
+}
+
+.half-key.active {
+      background-color: #F1477A;
+}
+
+.motion-switch {
+      color: #F1477A;;
+}
+.motion-switch.active {
+      color: #25cf91;
 }

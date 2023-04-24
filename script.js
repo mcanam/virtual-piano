@@ -158,8 +158,8 @@ function initializeMotion() {
             if (!isMotionControlActive) return;
             const x = event.accelerationIncludingGravity.x;
 
-            let value = (x + 10) / 20;
-                value = Math.min(Math.max(value, 0), 1);
+            let value = (x + 10) / 5;
+                value = Math.min(Math.max(value, 0), 2);
 
             console.log(value);
       });
